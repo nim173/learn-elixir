@@ -26,4 +26,8 @@ defmodule MyList do
   def caesar([], _n), do: []
   def caesar([head | tail], n) when head + n <= ?z, do: [head + n | caesar(tail, n)]
   def caesar([head | tail], n), do: [head + n - 26 | caesar(tail, n)]
+
+  # 4) returns a list of the numbers from 'from' up to 'to'
+  def span(from, to) when from > to, do: []
+  def span(from, to), do: [from | span(from + 1, to)]
 end
